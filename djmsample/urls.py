@@ -6,12 +6,12 @@ admin.site.site_header = 'Djmongo Administration'
 
 urlpatterns = patterns('',
     url(r'^admin/',    include(admin.site.urls)),
-    url(r'^',          include('apps.djmongo.console.urls')),
-    url(r'^console/',  include('apps.djmongo.console.urls')),
-    url(r'^search/',   include('apps.djmongo.search.urls')),
-    url(r'^import/',   include('apps.djmongo.dataimport.urls')),
-    url(r'^accounts/', include('apps.djmongo.accounts.urls')),
-    url(r'^write/',    include('apps.djmongo.write.urls')),
-    url(r'^aggregations/', include('apps.djmongo.aggregations.urls')),
+    url(r'^',          include('djmongo.console.urls')),
+    url(r'^console/',  include('djmongo.console.urls')),
+    url(r'^search/',   include('djmongo.search.urls')),
+    url(r'^import/',   include('djmongo.dataimport.urls')),
+    url(r'^accounts/', include('djmongo.accounts.urls')),
+    url(r'^write/',    include('djmongo.write.urls')),
+    url(r'^aggregations/', include('djmongo.aggregations.urls')),
     
 )

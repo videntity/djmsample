@@ -32,13 +32,13 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = (
     
      #djmongo -----------------------------------------------------
-    'apps.djmongo',
-    'apps.djmongo.console',
-    'apps.djmongo.search',
-    'apps.djmongo.dataimport',
-    'apps.djmongo.accounts',
-    'apps.djmongo.write',
-    'apps.djmongo.aggregations',
+    'djmongo',
+    'djmongo.console',
+    'djmongo.search',
+    'djmongo.dataimport',
+    'djmongo.accounts',
+    'djmongo.write',
+    'djmongo.aggregations',
 
     'django.contrib.admin',
     'django.contrib.auth',
