@@ -1,0 +1,6 @@
+{
+  "name": "Djmsample",
+  "tagline": "A Django Project Running a base DjMongo Application",
+  "body": "Djmongo Sample\r\n==============\r\n\r\n\r\nThis is a Django project running the Djmongo application.\r\n\r\nHere are the basic configuration steps.\r\n\r\n\r\n1. Clone the repo: `git clone https://github.com/videntity/djmsample.git`\r\n2. Ensure MongoDB is installed and running.\r\n3. Install the other requirements with pip `pip install -r djmsample/requirements.txt`\r\n4. Setup the db. `python manage.py makemigrations`, `python manage.py migrate`.\r\n5. Create a superuser. `python manage.py createsuperuser`.\r\n6. Run the built in server:  `python manage.py runserver`  \r\n7. Point to the URL: `http://127.0.0.1:8000/console`\r\n8. Login and start building your API gateway.\r\n\r\nPLease check out our open source command line tools for importing data into MongoDB at https://github.com/videntity/json-data-tools\r\n\r\n\r\n",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
