@@ -1,7 +1,0 @@
-django >= 1.9
-django-bootstrap-form
-django-cors-headers
-pymongo
-jsonschema
-django-djmongo
-django-localflavor
