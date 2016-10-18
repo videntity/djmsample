@@ -136,8 +136,6 @@ MIDDLEWARE_CLASSES += ('corsheaders.middleware.CorsMiddleware',)
 
 # Provider Registry Settings
 PROVIDER_STATIC_HOST = "http://providers.npi.io/"
-INTERNAL_REQUEST_USER = "a@v.com"
-INTERNAL_REQUEST_PASSWORD = "p"
 
 # Djmongo Settings --------------
 MONGO_HOST = "127.0.0.1"
@@ -151,7 +149,7 @@ MONGODB_CLIENT = "mongodb://127.0.0.1:27017"
 DEFAULT_TO_OPEN_READ = False
 
 # Authentication Backebnds
-AUTHENTICATION_BACKENDS = ('apps.djmongo.auth.HTTPAuthBackend',
+AUTHENTICATION_BACKENDS = ('djmongo.auth.HTTPAuthBackend',
                            'django.contrib.auth.backends.ModelBackend',)
 # Login URL
 LOGIN_REDIRECT_URL = '/accounts/login'
