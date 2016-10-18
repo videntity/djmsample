@@ -16,6 +16,6 @@ Here are the basic configuration steps.
 7. Point to the URL: `http://127.0.0.1:8000/console`
 8. Login and start building your API gateway.
 
-PLease check out our open source command line tools for importing data into MongoDB at https://github.com/videntity/json-data-tools
+Please check out our open source command line tools for importing data into MongoDB at https://github.com/videntity/json-data-tools
 
 
