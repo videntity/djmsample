@@ -152,8 +152,8 @@ DEFAULT_TO_OPEN_READ = False
 AUTHENTICATION_BACKENDS = ('djmongo.auth.HTTPAuthBackend',
                            'django.contrib.auth.backends.ModelBackend',)
 # Login URL
-LOGIN_REDIRECT_URL = '/accounts/login'
-LOGIN_URL = '/accounts/login'
+LOGIN_REDIRECT_URL = '/djm/accounts/login'
+LOGIN_URL = '/djm/accounts/login'
 
 # Pretty Bootstrap3 messages.
 from django.contrib.messages import constants as messages
