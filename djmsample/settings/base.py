@@ -1,5 +1,5 @@
 """
-Django settings for djmsample project.
+Django settings for the Djmongo Sample  project.
 
 For more information on this file, see
 https://docs.djangoproject.com/en/1.6/topics/settings/
@@ -10,6 +10,8 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+from django.contrib.messages import constants as messages
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE_DIR = os.path.join(BASE_DIR, '..')
 DATABASE_DIR = os.path.join(BASE_DIR, 'db')
@@ -40,13 +42,13 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
 
     # Djmongo -----------------------------------------------------
-     'djmongo',
-     'djmongo.accounts',
-     'djmongo.console',
-     'djmongo.search',
-     'djmongo.dataimport',
-     'djmongo.write',
-     'djmongo.aggregations',
+    'djmongo',
+    'djmongo.accounts',
+    'djmongo.console',
+    'djmongo.search',
+    'djmongo.dataimport',
+    'djmongo.write',
+    'djmongo.aggregations',
 
 
     # 3rd party
@@ -148,7 +150,7 @@ LOGIN_REDIRECT_URL = '/djm/accounts/login'
 LOGIN_URL = '/djm/accounts/login'
 
 # Pretty Bootstrap3 messages.
-from django.contrib.messages import constants as messages
+
 MESSAGE_TAGS = {messages.DEBUG: 'debug',
                 messages.INFO: 'info',
                 messages.SUCCESS: 'success',
