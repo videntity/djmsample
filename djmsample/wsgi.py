@@ -10,6 +10,6 @@ https://docs.djangoproject.com/en/1.6/howto/deployment/wsgi/
 import os
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "djmsample.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "djmsample.settings.local")
 
 application = get_wsgi_application()
