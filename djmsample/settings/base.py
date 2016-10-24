@@ -128,28 +128,20 @@ MEDIA_URL = '/media/'
 
 
 # CORS Settings
-
 CORS_ORIGIN_ALLOW_ALL = True
 
 CORS_ALLOW_METHODS = ('GET', 'POST',)
 MIDDLEWARE_CLASSES += ('corsheaders.middleware.CorsMiddleware',)
 
-# Provider Registry Settings
-PROVIDER_STATIC_HOST = "http://providers.npi.io/"
 
 # Djmongo Settings --------------
 MONGO_HOST = "127.0.0.1"
 MONGO_PORT = 27017
 MONGO_LIMIT = 200
-MONGO_DB_NAME = "nppes"
 MONGODB_CLIENT = "mongodb://127.0.0.1:27017"
-# Setting this to True removes any authentication or group requirements to view or search data.
-# When set to true, you need to explicity define it as open in the Console/Database
-# Access model within the django admin.
-DEFAULT_TO_OPEN_READ = False
 
 # Authentication Backebnds
-AUTHENTICATION_BACKENDS = ('djmongo.auth.HTTPAuthBackend',
+AUTHENTICATION_BACKENDS = ('djmongo.accounts.auth.HTTPAuthBackend',
                            'django.contrib.auth.backends.ModelBackend',)
 # Login URL
 LOGIN_REDIRECT_URL = '/djm/accounts/login'
