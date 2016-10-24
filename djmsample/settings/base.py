@@ -1,5 +1,5 @@
 """
-Django settings for djmsample project.
+Django settings for the Djmongo Sample  project.
 
 For more information on this file, see
 https://docs.djangoproject.com/en/1.6/topics/settings/
@@ -10,7 +10,10 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
-BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+from django.contrib.messages import constants as messages
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = os.path.join(BASE_DIR, '..')
 DATABASE_DIR = os.path.join(BASE_DIR, 'db')
 
 # Quick-start development settings - unsuitable for production
@@ -30,24 +33,25 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = (
-    
-     #djmongo -----------------------------------------------------
-    'djmongo',
-    'djmongo.console',
-    'djmongo.search',
-    'djmongo.dataimport',
-    'djmongo.accounts',
-    'djmongo.write',
-    'djmongo.aggregations',
-
+    # Django apps
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    
-    #3rd party
+
+    # Djmongo -----------------------------------------------------
+    'djmongo',
+    'djmongo.accounts',
+    'djmongo.console',
+    'djmongo.search',
+    'djmongo.dataimport',
+    'djmongo.write',
+    'djmongo.aggregations',
+
+
+    # 3rd party
     'corsheaders',
     'bootstrapform',
     'widget_tweaks',
@@ -66,7 +70,20 @@ ROOT_URLCONF = 'djmsample.urls'
 
 WSGI_APPLICATION = 'djmsample.wsgi.application'
 
+# Password validation
+# https://docs.djangoproject.com/en/1.9/ref/settings/#auth-password-validators
 
+AUTH_PASSWORD_VALIDATORS = [
+    {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+     },
+    {'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+     },
+    {'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+     },
+    {'NAME':
+     'django.contrib.auth.password_validation.NumericPasswordValidator',
+     },
+]
 
 
 # Database
@@ -112,46 +129,45 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
 MEDIA_URL = '/media/'
 
 
-#CORS Settings
-
+# CORS Settings
 CORS_ORIGIN_ALLOW_ALL = True
 
 CORS_ALLOW_METHODS = ('GET', 'POST',)
 MIDDLEWARE_CLASSES += ('corsheaders.middleware.CorsMiddleware',)
 
-#Provider Registry Settings
-PROVIDER_STATIC_HOST = "http://providers.npi.io/"
-INTERNAL_REQUEST_USER = "a@v.com"
-INTERNAL_REQUEST_PASSWORD = "p"
 
-#Djmongo Settings --------------
+# Djmongo Settings --------------
 MONGO_HOST = "127.0.0.1"
 MONGO_PORT = 27017
 MONGO_LIMIT = 200
-MONGO_DB_NAME ="nppes"
 MONGODB_CLIENT = "mongodb://127.0.0.1:27017"
 
-
-
-AUTHENTICATION_BACKENDS = ('djmongo.auth.HTTPAuthBackend',
+# Authentication Backebnds
+AUTHENTICATION_BACKENDS = ('djmongo.accounts.auth.HTTPAuthBackend',
                            'django.contrib.auth.backends.ModelBackend',)
-#optional
-LOGIN_URL = '/console/login'
+# Login URL
+LOGIN_REDIRECT_URL = '/djm/accounts/login'
+LOGIN_URL = '/djm/accounts/login'
 
-#Pretty Bootstrap3 messages.
-from django.contrib.messages import constants as messages
-MESSAGE_TAGS ={ messages.DEBUG: 'debug',
+# Pretty Bootstrap3 messages.
+
+MESSAGE_TAGS = {messages.DEBUG: 'debug',
                 messages.INFO: 'info',
                 messages.SUCCESS: 'success',
                 messages.WARNING: 'warning',
-                messages.ERROR: 'danger',}
-
-#Setting this to True removes any authentication or group requirements to view or search data.
-#When set to true, you need to explicity define it as open in the Console/Database
-#Access model within the django admin.
-DEFAULT_TO_OPEN_READ = False
-
-try:
-    from settings_local import *
-except:
-    pass
+                messages.ERROR: 'danger', }
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+            ],
+        },
+    },
+]
