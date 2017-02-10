@@ -56,6 +56,7 @@ INSTALLED_APPS = (
     'corsheaders',
     'bootstrapform',
     'widget_tweaks',
+    'markdown_deux',
 )
 
 MIDDLEWARE_CLASSES = (
