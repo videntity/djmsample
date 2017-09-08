@@ -7,7 +7,7 @@ This is a Django project running the [Djmongo](https://github.com/videntity/djan
 Here are the basic configuration steps.
 
 
-1. Clone the repo: `git clone https://github.com/videntity/djmsample.git`
+1. Clone the repo: `git clone https://github.com/videntity/djmsample.git`, and cd into repo: `cd djmsample`
 2. Ensure [MongoDB](https://docs.mongodb.com/manual/installation/) is installed and running.
 3. Install the other requirements with pip `pip install -r djmsample/requirements.txt`
 4. Setup the db. `python manage.py makemigrations`, `python manage.py migrate`.
