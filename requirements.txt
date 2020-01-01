@@ -1,9 +1,14 @@
-django == 1.9.5
+
+Django==2.2.7
 django-djmongo
 django-bootstrap-form
 django-cors-headers
 pymongo
 jsonschema
-django-djmongo
 django-localflavor
 django-widget-tweaks
+django-extensions
+django-getenv
+dj-database-url==0.5.0
+
+
