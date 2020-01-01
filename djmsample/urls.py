@@ -6,7 +6,7 @@ admin.autodiscover()
 admin.site.site_header = 'Djmongo Administration'
 
 urlpatterns = [
-    url(r'^admin/', include(admin.site.urls)),
+    url(r'^admin/', admin.site.urls),
 
     url(r'^djm/', include('djmongo.urls')),
     url(r'^$', TemplateView.as_view(template_name='djmongo/console/splash.html'),
