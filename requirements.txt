@@ -1,5 +1,5 @@
 
-Django==2.2.8
+Django>=3.3.0
 django-djmongo
 django-bootstrap-form
 django-cors-headers
