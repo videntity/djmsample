@@ -59,6 +59,7 @@ INSTALLED_APPS = [
     'bootstrapform',
     'widget_tweaks',
     'django_extensions',
+    'oauth2_provider', # Django OAuth Toolkit
 ]
 
 MIDDLEWARE = (
