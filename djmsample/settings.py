@@ -142,10 +142,12 @@ CORS_ALLOW_METHODS = ('GET', 'POST',)
 MIDDLEWARE += ('corsheaders.middleware.CorsMiddleware',)
 
 
-# Djmongo Settings --------------
+# Djmongo Settings --------------------------------------------------
 MONGODB_CLIENT = env("MONGODB_CLIENT", "mongodb://127.0.0.1:27017")
 MONGO_LIMIT = int(env("MONGO_LIMIT", "200"))
 
+# If set to False all databases are shown
+DJMONGO_DB_GROUPS = bool_env(env('DJMONGO_DB_GROUPS', False))
 
 # Authentication Backends
 AUTHENTICATION_BACKENDS = ('djmongo.accounts.auth.HTTPAuthBackend',
